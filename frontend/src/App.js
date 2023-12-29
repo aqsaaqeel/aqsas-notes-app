@@ -1,13 +1,21 @@
 import './App.css';
 import Header from './components/Header/Header';
 import { LandingPage } from './pages/landing-page/LandingPage';
-function App() {
+import {BrowserRouter, Route, Routes} from "react-router-dom"
+import { MyNotes } from './pages/my-notes/MyNotes';
+function App() { 
   return (
-    <div className="App">
+    <BrowserRouter>
       <Header />
       Hello World
-      <LandingPage />
-    </div>
+      <main>
+        <Routes>
+        <Route path="/" element={<LandingPage />}/>
+        <Route path="/my-notes" element={<MyNotes/>}/>
+        </Routes>
+      </main>
+    </BrowserRouter>
+
   );
 }
 
