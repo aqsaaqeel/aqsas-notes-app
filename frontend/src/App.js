@@ -7,7 +7,6 @@ function App() {
   return (
     <BrowserRouter>
       <Header />
-      Hello World
       <main>
         <Routes>
         <Route path="/" element={<LandingPage />}/>
