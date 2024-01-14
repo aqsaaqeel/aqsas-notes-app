@@ -2,6 +2,19 @@ const express = require("express");
 const notes = require("./data/notes")
 const app = express();
 const dotenv = require("dotenv");
+const connectDB = require("./config/db")
+
+const cors = require('cors');
+dotenv.config();
+connectDB();
+// Enable CORS for all routes
+app.use(cors());
+
+// Your other server setup and routes here
+
+app.listen(3002, () => {
+  console.log('Server is running on port 3001');
+});
 
 app.get("/", (req, res) => {
     res.send("API is running....")
